@@ -38,9 +38,9 @@ def str_stemmer_title(s):
     return " ".join([stemmer.stem(word) for word in s.lower().split()])
 
 
-df_all = pd.concat((df_train, df_test), axis=0, ignore_index=True)
+df_all = pd.concat((df_train, df_test), axis=0, ignore_index=True,sort=False)
 
-df_all = pd.merge(df_all, df_pro_desc, how='left', on='product_uid')
+df_all = pd.merge(df_all, df_pro_desc, how='left', on='product_uid', sort=False)
 
 
 ############## apply stemming #####################
